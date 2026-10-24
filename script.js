@@ -1,87 +1,333 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* =========================================================
+   GANJNAMEH IRAN
+   Main JavaScript
+   ========================================================= */
 
-    // =========================
-    // MOBILE MENU
-    // =========================
 
-    const menuButton = document.getElementById("menuButton");
-    const navLinks = document.getElementById("navLinks");
+/* =========================
+   MOBILE MENU
+========================= */
 
-    if (menuButton && navLinks) {
+const menuButton = document.querySelector(".menu-button");
+const mobileNav = document.querySelector(".mobile-nav");
 
-        menuButton.addEventListener("click", () => {
-            navLinks.classList.toggle("open");
+
+if (menuButton && mobileNav) {
+
+    menuButton.addEventListener("click", () => {
+
+        const isOpen =
+            mobileNav.classList.toggle("is-open");
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
+
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen
+                ? "بستن منو"
+                : "باز کردن منو"
+        );
+
+    });
+
+
+    /* Close menu after clicking a link */
+
+    const mobileLinks =
+        mobileNav.querySelectorAll("a");
+
+
+    mobileLinks.forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+            mobileNav.classList.remove(
+                "is-open"
+            );
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuButton.setAttribute(
+                "aria-label",
+                "باز کردن منو"
+            );
+
         });
 
-    }
+    });
+
+}
 
 
-    // =========================
-    // SMOOTH SCROLL
-    // =========================
+/* =========================
+   HEADER SCROLL EFFECT
+========================= */
 
-    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+const header =
+    document.querySelector(".site-header");
 
-        link.addEventListener("click", function (event) {
 
-            const targetId = this.getAttribute("href");
+if (header) {
 
-            if (!targetId || targetId === "#") {
+    const updateHeader =
+        () => {
+
+            if (window.scrollY > 40) {
+
+                header.classList.add(
+                    "is-scrolled"
+                );
+
+            } else {
+
+                header.classList.remove(
+                    "is-scrolled"
+                );
+
+            }
+
+        };
+
+
+    window.addEventListener(
+        "scroll",
+        updateHeader,
+        { passive: true }
+    );
+
+
+    updateHeader();
+
+}
+
+
+/* =========================
+   SMOOTH NAVIGATION
+========================= */
+
+const navigationLinks =
+    document.querySelectorAll(
+        'a[href^="#"]'
+    );
+
+
+navigationLinks.forEach((link) => {
+
+    link.addEventListener(
+        "click",
+        (event) => {
+
+            const targetId =
+                link.getAttribute("href");
+
+
+            if (
+                !targetId ||
+                targetId === "#"
+            ) {
                 return;
             }
 
-            const target = document.querySelector(targetId);
 
-            if (target) {
+            const target =
+                document.querySelector(
+                    targetId
+                );
 
-                event.preventDefault();
 
-                target.scrollIntoView({
+            if (!target) {
+                return;
+            }
+
+
+            event.preventDefault();
+
+
+            const headerHeight =
+                header
+                    ? header.offsetHeight
+                    : 0;
+
+
+            const targetPosition =
+                target.getBoundingClientRect().top
+                +
+                window.scrollY
+                -
+                headerHeight;
+
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth"
+            });
+
+        }
+    );
+
+});
+
+
+/* =========================
+   AUDIO BUTTONS
+========================= */
+
+const audioButtons =
+    document.querySelectorAll(
+        ".audio-button, .hero-audio-button"
+    );
+
+
+audioButtons.forEach((button) => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            button.classList.toggle(
+                "is-active"
+            );
+
+
+            const active =
+                button.classList.contains(
+                    "is-active"
+                );
+
+
+            button.setAttribute(
+                "aria-pressed",
+                active
+            );
+
+
+            /*
+             * فعلاً سیستم صوتی واقعی
+             * به سایت متصل نشده است.
+             *
+             * بعداً فایل‌های صوتی بازی
+             * در این قسمت قرار می‌گیرند.
+             */
+
+        }
+    );
+
+});
+
+
+/* =========================
+   MAP BUTTON
+========================= */
+
+const mapButton =
+    document.querySelector(
+        ".map-button"
+    );
+
+
+if (mapButton) {
+
+    mapButton.addEventListener(
+        "click",
+        () => {
+
+            const mapSection =
+                document.querySelector(
+                    "#map"
+                );
+
+
+            if (mapSection) {
+
+                mapSection.scrollIntoView({
                     behavior: "smooth",
                     block: "start"
                 });
 
-                // بستن منوی موبایل بعد از انتخاب
-                if (navLinks) {
-                    navLinks.classList.remove("open");
-                }
             }
 
-        });
+        }
+    );
+
+}
+
+
+/* =========================
+   SIMPLE SCROLL REVEAL
+========================= */
+
+const revealElements =
+    document.querySelectorAll(
+        ".feature-card, .story-section, .audio-step, .team-member"
+    );
+
+
+if (
+    "IntersectionObserver" in window &&
+    revealElements.length
+) {
+
+    const observer =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.classList.add(
+                            "is-visible"
+                        );
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    revealElements.forEach((element) => {
+
+        observer.observe(element);
 
     });
 
-
-    // =========================
-    // CLOSE MOBILE MENU
-    // =========================
-
-    document.addEventListener("click", (event) => {
-
-        if (!navLinks || !menuButton) {
-            return;
-        }
-
-        const clickedInsideMenu = navLinks.contains(event.target);
-        const clickedMenuButton = menuButton.contains(event.target);
-
-        if (!clickedInsideMenu && !clickedMenuButton) {
-            navLinks.classList.remove("open");
-        }
-
-    });
+}
 
 
-    // =========================
-    // ESC KEY CLOSES MENU
-    // =========================
+/* =========================
+   CURRENT YEAR
+========================= */
 
-    document.addEventListener("keydown", (event) => {
+const yearElements =
+    document.querySelectorAll(
+        ".footer-copy"
+    );
 
-        if (event.key === "Escape" && navLinks) {
-            navLinks.classList.remove("open");
-        }
 
-    });
+yearElements.forEach((element) => {
+
+    const currentYear =
+        new Date().getFullYear();
+
+
+    element.textContent =
+        `© ${currentYear} گنج‌نامه ایران`;
 
 });
