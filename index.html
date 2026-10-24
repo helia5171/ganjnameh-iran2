@@ -1,181 +1,489 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>گنج‌نامه ایران | سفری برای شنیدن ایران</title>
+    <meta name="description"
+        content="گنج‌نامه ایران؛ یک تجربه تعاملی برای کشف ایران، فرهنگ، صداها و داستان‌های آن.">
+
+    <meta name="theme-color" content="#171513">
+
+    <title>گنج‌نامه ایران</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-    <header class="navbar">
-        <div class="nav-container">
+    <header class="site-header">
 
+        <div class="header-inner">
+
+            <!-- Logo -->
             <a href="#home" class="logo">
-                گنج‌نامه ایران
+
+                <span class="logo-symbol">✦</span>
+
+                <span class="logo-text">
+                    گنج‌نامه ایران
+                </span>
+
             </a>
 
-            <nav class="nav-links" id="navLinks">
-                <a href="#home">خانه</a>
-                <a href="#adventure">ماجراجویی</a>
-                <a href="#story">داستان</a>
-                <a href="#audio">تجربه صوتی</a>
-                <a href="#team">تیم</a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="منوی اصلی">
+
+                <a href="#map">
+                    نقشه ایران
+                </a>
+
+                <a href="#adventure">
+                    ماجراجویی
+                </a>
+
+                <a href="#story">
+                    داستان
+                </a>
+
+                <a href="#audio">
+                    تجربه صوتی
+                </a>
+
+                <a href="#team">
+                    تیم
+                </a>
+
             </nav>
 
-            <button class="menu-button" id="menuButton" aria-label="باز کردن منو">
-                ☰
-            </button>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+
+                <button
+                    class="audio-button"
+                    type="button"
+                    aria-label="فعال کردن صدا"
+                    title="صدا">
+                    ♫
+                </button>
+
+
+                <span class="header-divider"></span>
+
+
+                <button
+                    class="language-button"
+                    type="button"
+                    aria-label="زبان">
+                    FA
+                </button>
+
+
+                <button
+                    class="menu-button"
+                    type="button"
+                    aria-label="باز کردن منو"
+                    aria-expanded="false">
+
+                    ☰
+
+                </button>
+
+            </div>
 
         </div>
+
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" aria-label="منوی موبایل">
+
+            <a href="#map">
+                نقشه ایران
+            </a>
+
+            <a href="#adventure">
+                ماجراجویی
+            </a>
+
+            <a href="#story">
+                داستان
+            </a>
+
+            <a href="#audio">
+                تجربه صوتی
+            </a>
+
+            <a href="#team">
+                تیم
+            </a>
+
+        </nav>
+
     </header>
 
 
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
     <main>
 
-        <!-- ================= HERO ================= -->
 
-        <section id="home" class="hero">
+        <!-- =========================
+             HERO / HOME
+        ========================== -->
 
-            <div class="hero-overlay"></div>
+        <section
+            id="home"
+            class="hero">
+
+
+            <!-- Hero Image -->
+
+            <div class="hero-artwork">
+
+                <img
+                    src="assets/images/hero.png"
+                    alt="نقشه هنری ایران در گنج‌نامه ایران"
+                    class="hero-image">
+
+                <div
+                    class="hero-overlay"
+                    aria-hidden="true">
+                </div>
+
+            </div>
+
+
+
+            <!-- Hero Content -->
 
             <div class="hero-content">
 
-                <span class="hero-small">
-                    سفری متفاوت در سرزمین ایران
-                </span>
+                <div class="hero-eyebrow">
+                    یک سفر متفاوت در دل ایران
+                </div>
+
 
                 <h1>
                     گنج‌نامه ایران
                 </h1>
 
-                <p class="hero-slogan">
+
+                <p class="hero-subtitle">
                     برای شناختن ایران، همیشه لازم نیست آن را ببینیم.
                 </p>
 
-                <p class="hero-description">
-                    یک ماجراجویی صوتی و تعاملی برای کشف فرهنگ،
-                    داستان‌ها و سرزمین‌های ایران.
-                </p>
 
-                <a href="#adventure" class="hero-button">
-                    شروع ماجراجویی
-                </a>
+                <div class="hero-actions">
+
+                    <a
+                        href="#adventure"
+                        class="primary-button">
+
+                        <span>
+                            شروع ماجراجویی
+                        </span>
+
+                        <span
+                            class="button-arrow"
+                            aria-hidden="true">
+                            ←
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Audio Prompt -->
+
+            <div class="hero-audio">
+
+                <button
+                    class="hero-audio-button"
+                    type="button"
+                    aria-label="پخش تجربه صوتی">
+
+                    ♫
+
+                </button>
+
+
+                <div class="hero-audio-text">
+
+                    <span>
+                        به صدای ایران گوش کن
+                    </span>
+
+
+                    <div
+                        class="sound-wave"
+                        aria-hidden="true">
+
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Decorative Compass -->
+
+            <div
+                class="compass"
+                aria-hidden="true">
+
+                ✧
 
             </div>
 
         </section>
 
 
-        <!-- ================= RECEIVE GAME ================= -->
 
-        <section id="adventure" class="adventure-section">
+        <!-- =========================
+             IRAN MAP
+        ========================== -->
+
+        <section
+            id="map"
+            class="map-section">
+
 
             <div class="section-heading">
 
                 <span class="section-kicker">
-                    آغاز سفر
+                    سرزمین هزار داستان
                 </span>
 
+
                 <h2>
-                    آماده‌ای ایران را از راهی متفاوت کشف کنی؟
+                    ایران را کشف کن
                 </h2>
 
+
                 <p>
-                    سفر تو در گنج‌نامه ایران از همین‌جا آغاز می‌شود.
+                    روی نقشه حرکت کن و مسیر ماجراجویی خود را پیدا کن.
                 </p>
 
             </div>
+
+
+
+            <!--
+                در مرحله بعد این بخش
+                با نقشه SVG واقعی ایران جایگزین می‌شود.
+            -->
+
+            <div class="map-placeholder">
+
+                <div class="map-message">
+
+                    <span
+                        class="map-icon"
+                        aria-hidden="true">
+                        ✦
+                    </span>
+
+
+                    <h3>
+                        نقشه ایران
+                    </h3>
+
+
+                    <p>
+                        تهران، اصفهان و هرمزگان
+                        در نخستین مسیرهای گنج‌نامه
+                        منتظر کشف شدن هستند.
+                    </p>
+
+
+                    <button
+                        class="map-button"
+                        type="button">
+
+                        ورود به نقشه
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ADVENTURE
+        ========================== -->
+
+        <section
+            id="adventure"
+            class="simple-section adventure-section">
+
+
+            <div class="section-kicker">
+                تجربه گنج‌نامه
+            </div>
+
+
+            <h2>
+                ماجراجویی آغاز می‌شود
+            </h2>
+
+
+            <p>
+                وارد دنیای گنج‌نامه ایران شو،
+                صداها را بشنو،
+                سرنخ‌ها را پیدا کن
+                و گوشه‌ای از ایران را کشف کن.
+            </p>
 
 
             <div class="feature-grid">
 
+
                 <article class="feature-card">
 
-                    <span class="feature-number">01</span>
+                    <div class="feature-icon">
+                        ♧
+                    </div>
 
                     <h3>
-                        ایران را بشنو
+                        کشف
                     </h3>
 
                     <p>
-                        صداها، روایت‌ها و نشانه‌ها تو را در مسیر
-                        کشف سرزمین‌های مختلف ایران همراهی می‌کنند.
+                        استان‌ها، فرهنگ‌ها و داستان‌های
+                        مختلف ایران را کشف کن.
                     </p>
 
                 </article>
 
 
+
                 <article class="feature-card">
 
-                    <span class="feature-number">02</span>
+                    <div class="feature-icon">
+                        ♫
+                    </div>
 
                     <h3>
-                        انتخاب کن
+                        شنیدن
                     </h3>
 
                     <p>
-                        در طول داستان تصمیم بگیر، سرنخ‌ها را دنبال کن
-                        و مسیر ماجراجویی خودت را پیش ببر.
+                        صداها بخش مهمی از مسیر
+                        شناخت و تعامل با جهان بازی هستند.
                     </p>
 
                 </article>
 
 
+
                 <article class="feature-card">
 
-                    <span class="feature-number">03</span>
+                    <div class="feature-icon">
+                        ✦
+                    </div>
 
                     <h3>
-                        گنج را پیدا کن
+                        تعامل
                     </h3>
 
                     <p>
-                        هر مرحله بخشی از فرهنگ، تاریخ و هویت ایران را
-                        برای تو آشکار می‌کند.
+                        با انتخاب‌ها، سرنخ‌ها و
+                        چالش‌های هر مرحله همراه شو.
                     </p>
 
                 </article>
+
 
             </div>
 
+        </section>
 
-            <!-- EMAIL BOX -->
 
-            <div class="game-download-box">
+
+        <!-- =========================
+             STORY
+        ========================== -->
+
+        <section
+            id="story"
+            class="simple-section story-section">
+
+
+            <div class="story-content">
 
                 <span class="section-kicker">
-                    دریافت بازی
+                    یک داستان از ایران
                 </span>
 
+
                 <h2>
-                    ماجراجویی از اینجا شروع می‌شود
+                    داستان گنج‌نامه
                 </h2>
 
+
                 <p>
-                    برای دریافت و تجربه نسخه بازی
-                    «گنج‌نامه ایران»، از طریق ایمیل زیر با ما در ارتباط باشید.
+                    همه‌چیز از بازگشت مادربزرگ و
+                    یک چمدان پر از سوغات ایرانی آغاز می‌شود؛
+                    اما در میان آن سوغات‌ها چیزی وجود دارد
+                    که قرار است مسیر زندگی شخصیت اصلی را تغییر دهد.
                 </p>
 
-                <div class="game-email">
-                    naghavihelia9@gmail.com
-                </div>
 
-                <p class="email-help">
-                    در پیام خود عبارت «دریافت گنج‌نامه ایران» را بنویسید
-                    تا اطلاعات مربوط به بازی برای شما ارسال شود.
+                <p>
+                    یک نشانه،
+                    چند صدای ناشناخته
+                    و سرنخ‌هایی که از گوشه‌وکنار ایران می‌آیند،
+                    آغاز یک سفر متفاوت هستند.
                 </p>
+
+
+                <p class="story-highlight">
+                    شاید گنجی که به دنبالش هستیم،
+                    یک شیء نباشد؛
+                    شاید خودِ ایران همان گنج باشد.
+                </p>
+
 
                 <a
-                    class="hero-button email-button"
-                    href="mailto:naghavihelia9@gmail.com?subject=دریافت%20بازی%20گنج‌نامه%20ایران"
-                >
-                    ارسال ایمیل برای دریافت بازی
+                    href="#story"
+                    class="text-button">
+
+                    ادامه داستان
+
+                    <span>
+                        ←
+                    </span>
+
                 </a>
 
             </div>
@@ -183,105 +491,94 @@
         </section>
 
 
-        <!-- ================= STORY ================= -->
 
-        <section id="story" class="story-section">
+        <!-- =========================
+             AUDIO EXPERIENCE
+        ========================== -->
 
-            <div class="story-content">
-
-                <span class="section-kicker">
-                    آغاز یک راز
-                </span>
-
-                <h2>
-                    همه‌چیز با بازگشت مادربزرگ شروع شد...
-                </h2>
-
-                <p>
-                    مادربزرگ پس از سفری طولانی در ایران به خانه بازمی‌گردد؛
-                    اما این بار تنها نیست.
-                </p>
-
-                <p>
-                    چمدان او پر از یادگاری‌های شهرهای مختلف ایران است:
-                    سوغات، نشانه‌ها، صداها و یک شیء مرموز که داستانی
-                    ناشناخته را با خود به همراه دارد.
-                </p>
-
-                <p>
-                    هر سرنخ، مسیر تازه‌ای را باز می‌کند و هر صدا،
-                    بخشی از ایران را زنده می‌کند.
-                </p>
-
-                <blockquote>
-                    شاید خودِ ایران، همان گنج باشد.
-                </blockquote>
-
-            </div>
-
-        </section>
+        <section
+            id="audio"
+            class="simple-section audio-section">
 
 
-        <!-- ================= AUDIO EXPERIENCE ================= -->
+            <span class="section-kicker">
+                تجربه متفاوت
+            </span>
 
-        <section id="audio" class="audio-section">
 
-            <div class="section-heading">
+            <h2>
+                تجربه صوتی
+            </h2>
 
-                <span class="section-kicker">
-                    فراتر از تصویر
-                </span>
 
-                <h2>
-                    یک تجربه صوتی و تعاملی
-                </h2>
+            <p>
+                در گنج‌نامه،
+                صدا فقط یک عنصر جانبی نیست؛
+                بخشی از مسیر کشف و تعامل با جهان بازی است.
+            </p>
 
-                <p>
-                    در گنج‌نامه ایران، صدا فقط پس‌زمینه نیست؛
-                    بخشی از مسیر بازی است.
-                </p>
-
-            </div>
 
 
             <div class="audio-flow">
 
                 <div class="audio-step">
-                    <span>01</span>
-                    <h3>شنیدن</h3>
-                    <p>دریافت نشانه‌ها از طریق صدا</p>
+
+                    <span>
+                        01
+                    </span>
+
+                    <strong>
+                        شنیدن
+                    </strong>
+
                 </div>
 
-                <div class="flow-line"></div>
+
+                <div class="audio-line"></div>
+
 
                 <div class="audio-step">
-                    <span>02</span>
-                    <h3>شناخت</h3>
-                    <p>کشف اطلاعات هر منطقه</p>
+
+                    <span>
+                        02
+                    </span>
+
+                    <strong>
+                        شناختن
+                    </strong>
+
                 </div>
 
-                <div class="flow-line"></div>
+
+                <div class="audio-line"></div>
+
 
                 <div class="audio-step">
-                    <span>03</span>
-                    <h3>انتخاب</h3>
-                    <p>تصمیم‌گیری در مسیر داستان</p>
+
+                    <span>
+                        03
+                    </span>
+
+                    <strong>
+                        انتخاب کردن
+                    </strong>
+
                 </div>
 
-                <div class="flow-line"></div>
+
+                <div class="audio-line"></div>
+
 
                 <div class="audio-step">
-                    <span>04</span>
-                    <h3>تعامل</h3>
-                    <p>شرکت در مراحل و چالش‌ها</p>
-                </div>
 
-                <div class="flow-line"></div>
+                    <span>
+                        04
+                    </span>
 
-                <div class="audio-step">
-                    <span>05</span>
-                    <h3>بازخورد</h3>
-                    <p>دریافت نتیجه از طریق صدا</p>
+                    <strong>
+                        کشف کردن
+                    </strong>
+
                 </div>
 
             </div>
@@ -289,68 +586,116 @@
         </section>
 
 
-        <!-- ================= TEAM ================= -->
 
-        <section id="team" class="team-section">
+        <!-- =========================
+             TEAM
+        ========================== -->
 
-            <div class="section-heading">
-
-                <span class="section-kicker">
-                    سازندگان پروژه
-                </span>
-
-                <h2>
-                    تیم گنج‌نامه ایران
-                </h2>
-
-            </div>
+        <section
+            id="team"
+            class="simple-section team-section">
 
 
-            <div class="team-grid">
+            <span class="section-kicker">
+                سازندگان گنج‌نامه
+            </span>
 
-                <article class="team-card">
-                    <div class="team-symbol">✦</div>
-                    <h3>درسا ساعی‌کیا</h3>
-                    <p>طراحی و توسعه پروژه</p>
-                </article>
 
-                <article class="team-card">
-                    <div class="team-symbol">✦</div>
-                    <h3>هلیا نقوی</h3>
-                    <p>طراحی و توسعه پروژه</p>
-                </article>
+            <h2>
+                تیم ما
+            </h2>
+
+
+            <p>
+                این پروژه با هدف ساخت تجربه‌ای متفاوت
+                برای شناخت ایران و ایجاد دسترسی بیشتر
+                به تجربه‌های فرهنگی شکل گرفته است.
+            </p>
+
+
+
+            <div class="team-names">
+
+
+                <div class="team-member">
+
+                    <span class="team-number">
+                        01
+                    </span>
+
+                    <strong>
+                        درسا ساعی‌کیا
+                    </strong>
+
+                </div>
+
+
+
+                <div class="team-member">
+
+                    <span class="team-number">
+                        02
+                    </span>
+
+                    <strong>
+                        هلیا نقوی
+                    </strong>
+
+                </div>
+
 
             </div>
 
         </section>
+
 
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
 
-    <footer class="footer">
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
-        <h2>
-            گنج‌نامه ایران
-        </h2>
+    <footer class="site-footer">
 
-        <p>
-            برای شناختن ایران، همیشه لازم نیست آن را ببینیم.
-        </p>
+        <div class="footer-inner">
 
-        <p class="footer-email">
-            naghavihelia9@gmail.com
-        </p>
+            <div class="footer-brand">
 
-        <span>
-            © 2026 Ganjnameh Iran
-        </span>
+                <span class="logo-symbol">
+                    ✦
+                </span>
+
+                <span>
+                    گنج‌نامه ایران
+                </span>
+
+            </div>
+
+
+            <p>
+                برای شناختن ایران،
+                همیشه لازم نیست آن را ببینیم.
+            </p>
+
+
+            <span class="footer-copy">
+                © 2026 گنج‌نامه ایران
+            </span>
+
+        </div>
 
     </footer>
 
 
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
